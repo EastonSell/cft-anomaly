@@ -1,0 +1,379 @@
+\documentclass[aps,prl,reprint,nofootinbib]{revtex4-2}
+\usepackage{amsmath,amssymb,bm}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\newcommand{\Id}{\mathbb I}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\CZ}{\operatorname{CZ}}
+\newcommand{\F}{\mathcal F}
+\begin{document}
+\title{Quantitative mixed-state entanglement for anomalous Abelian boundaries}
+\begin{abstract}
+We present candidate exact entanglement results for specified lattice
+representatives of anomalous symmetries. For a CZX-type action on any
+Eulerian graph, a parity of the edges crossing a tripartition determines
+the sharp weighted convex-roof minimum in each charge sector. On
+finite-range chains this parity is the $\mathbb Z_2$ endpoint anomaly.
+For the type-I $\mathbb Z_N$ domain-wall action with nonzero class $p$,
+every charge-sector projector is negative under partial transpose across
+every connected bipartition when $N\ge3$; for $N=3$ its trace norm is exactly
+$(5+8\cos(\pi/9))/9$. These projectors have maximally mixed proper
+subsystems. The latter result rules out a complete bipartite-product
+eigenbasis for this representative, contrary to a broad expectation in
+Lessa, Cheng, and Wang, without contradicting their theorems. We also
+give an explicit, size-independent tripartite lower bound for the
+$\mathbb Z_N$ actions. These are representative-specific results;
+specialist verification and priority review remain open.
+\end{abstract}
+\maketitle
+
+The obstruction to localizing an anomalous symmetry provides constraints
+on the entanglement of its states. For one-dimensional bosonic boundaries,
+Lessa, Cheng, and Wang~\cite{LCW} proved that strongly symmetric states
+are tripartite nonseparable and established a separate finite-depth
+preparation obstruction. They conjectured a sharp, size-independent value
+for a convex-roof measure of the CZX action~\cite{Chen} and gave candidate attaining
+bases. They also expected their construction of a complete
+bipartite-product eigenbasis to extend to finite Abelian groups. We give
+quantitative calculations for two concrete families. The first extends
+the CZX calculation to Eulerian graphs; the second supplies a counterexample
+to the broad reading of that basis expectation. It leaves open the weaker
+possibility that a different representative admits such a basis.
+
+For a pure state of three parties let
+\begin{equation}
+ \F_w(\psi)=\sum_{R=A,B,C}w_RS(\rho_R),\qquad w_R\ge0,
+ \label{defF}
+\end{equation}
+and extend it to mixed states by the pure-state convex roof. Here
+$\rho_R=\Tr_{R^c}|\psi\rangle\langle\psi|$ and logarithms are natural.
+The measure $E_3=\F_{(1/2,1/2,1/2)}$ is that used in Ref.~\cite{LCW};
+see also Ref.~\cite{Szalay}. Strong symmetry means support in a single
+eigenspace, not merely commutation with the symmetry.
+
+\emph{Eulerian graph result.---} Let $G=(V,E)$ be a finite undirected
+loopless Eulerian graph with qubits on its vertices. Parallel edges may
+be counted with multiplicity. Define the Hermitian involution
+\begin{equation}
+ U_G=i^{|E|\bmod2}\Bigl(\prod_{v\in V}X_v\Bigr)
+                         \Bigl(\prod_{uv\in E}\CZ_{uv}\Bigr).
+ \label{UG}
+\end{equation}
+For three disjoint nonempty parts $A,B,C$ covering $V$, let $e_{RS}$
+count edges between $R,S$ modulo two. Every Eulerian cut has even degree;
+therefore $e_{AB}=e_{BC}=e_{CA}=:e$. Put
+\begin{align}
+ p_*&=(2+\sqrt2)/4,\qquad W=\sum_Rw_R,\nonumber\\
+ B_w&=\min\{(W-\max_Rw_R)\log2,\,W h(p_*)\},
+ \label{Bw}
+\end{align}
+where $h(p)=-p\log p-(1-p)\log(1-p)$. We obtain
+\begin{equation}
+ \F_w(\rho)\ge eB_w,\qquad
+ \F_w\!\left(\frac{\Id+\lambda U_G}{2^{|V|}}\right)=eB_w,
+ \label{graph}
+\end{equation}
+for $U_G\rho=\lambda\rho$, $\lambda=\pm1$. If $e=0$, the sector
+projectors have complete product bases across the specified partition.
+If $e=1$, both branches in Eq.~\eqref{Bw} have explicit attaining bases.
+For $e=1$, each sector projector has
+$E_3=\frac32h(p_*)=0.901314055\ldots\log2$; for $e=0$ this value is zero.
+For a nearest-neighbor ring cut into three connected arcs the $e=1$ value
+is the value conjectured in Ref.~\cite{LCW}, which already provided the
+balanced candidate basis.
+
+\emph{Proof of Eq.~\eqref{graph}.---} The unphased action sends a bit
+string $b$ to its complement with phase $(-1)^{q(b)}$, where
+$q(b)=\sum_{uv\in E}b_ub_v$. Its square is
+$(-1)^{|E|}\prod_vZ_v^{\deg(v)}$; Eulerianity proves $U_G^2=\Id$.
+For each party, measure the projectors onto complement pairs
+$\{|a_R\rangle,|\bar a_R\rangle\}$. These party-local projectors
+commute with $U_G$ and resolve the Hilbert space into three-qubit blocks.
+The measurements cannot increase the average of Eq.~\eqref{defF}: for
+each bipartition this follows from entropy concavity on the unmeasured
+side and purity, applied successively to all three local measurements.
+
+On a block with encoded bits $x,y,z$,
+\begin{equation}
+ q=q_0+\ell_Ax+\ell_By+\ell_Cz+e(xy+yz+zx)\pmod2.
+ \label{polyphase}
+\end{equation}
+Since $q(x,y,z)+q(1-x,1-y,1-z)=|E|$ modulo two,
+$\sum_R\ell_R=e+|E|$ modulo two. When $e=0$, Eq.~\eqref{polyphase} and
+the phase in Eq.~\eqref{UG} give a sign times a product of local $X$ or
+$Y$ operators. Their charge eigenspaces have product bases.
+
+For $e=1$, encoded local $X$ operations change $\ell$ by any even-parity
+vector. If $|E|$ is odd first conjugate by an encoded
+$S=\operatorname{diag}(1,i)$, changing the linear parity; then reduce to
+$\ell=(1,0,0)$. Up to a sign and local unitary, every block is an
+eigenspace of
+\begin{equation}
+ V=iX_AX_BX_C\CZ_{AB}\CZ_{BC}\CZ_{CA},\quad V^2=\Id.
+ \label{V}
+\end{equation}
+For an eigenstate, $VZ_RV^\dagger=-Z_R$ confines its marginal Bloch
+vector to the $XY$ plane. Let its length be $r_R$, and choose an $XY$
+Pauli observable $M_R$ with expectation $r_R$. If $M_A=aX_A+bY_A$,
+then $VM_AV^\dagger=(aX_A-bY_A)Z_BZ_C$ anticommutes with $M_B$.
+Squaring a real linear combination gives
+\begin{equation}
+ r_A^2+r_B^2\le1,\quad r_B^2+r_C^2\le1,\quad
+ r_C^2+r_A^2\le1.
+ \label{bloch}
+\end{equation}
+The anticommuting-observable technique has prior uses in entropy
+uncertainty relations~\cite{WehnerWinter}. With $x_R=r_R^2$,
+\begin{equation}
+ S(\rho_R)=f(x_R)=\log2-\sum_{j\ge1}\frac{x_R^j}{2j(2j-1)},
+ \label{concavity}
+\end{equation}
+a concave function. The polytope in Eq.~\eqref{bloch} has vertices $0$,
+the three coordinate unit vectors, and $(1/2,1/2,1/2)$. Indeed, with
+$m=\min_Rx_R$, its explicit convex decomposition is
+\begin{align}
+ x={}&(1-\textstyle\sum_Rx_R+m)0+\sum_R(x_R-m)e_R\nonumber\\
+     &+2m(1/2,1/2,1/2).
+ \label{convex}
+\end{align}
+The vertex values give $B_w$. The block measurements prove the bound for
+pure charge eigenstates, and every vector in an ensemble of a strong
+sector state lies in that sector, proving the mixed-state bound.
+
+For attainment, let
+$U_{100}|xyz\rangle=(-1)^{x+xy+yz+zx}|\bar x\bar y\bar z\rangle$;
+it obeys $S_AVS_A^\dagger=-U_{100}$. In its $+1$ sector the normalized
+lexicographic vector
+\begin{equation}
+ v_*=(1,1,1,i,-i,1,1,1)/\sqrt8
+ \label{balanced}
+\end{equation}
+has all marginal eigenvalues $p_*,1-p_*$. The four vectors obtained using
+$\Id,Z_AZ_B,Z_AZ_C,Z_BZ_C$ are orthonormal. For the other branch, the
+following four vectors divided by $2$ have $C$ pure and $A,B$ maximally
+mixed, and form a $+1$-sector basis:
+\begin{align}
+ &(1,1,0,0,0,0,1,1),\quad(1,-1,0,0,0,0,-1,1),\nonumber\\
+ &(0,0,1,i,-i,1,0,0),\quad(0,0,1,-i,i,1,0,0).
+ \label{bellbasis}
+\end{align}
+Permuting parties in Eq.~\eqref{V} and applying a local $Z$ supplies the
+other choices and the opposite sector. Assembling the appropriate bases
+over all blocks proves the equality in Eq.~\eqref{graph}. These graph
+sectors are not generally Pauli stabilizer-code projectors; familiar
+graph-state cut-rank formulas~\cite{Hein} do not directly give this roof.
+
+\emph{Finite-range anomaly.---} For a chain take edges $(j,j+r)$ for
+$r$ in a finite set $S$, with $R=\max S$, $L>2R$, and each connected arc
+of length at least $R$. Then $e=\kappa:=\sum_{r\in S}r\pmod2$. To
+identify the endpoint class, restrict the unphased symmetry to an interval
+$I$ much longer than $R$, keeping its internal edges. Its square is
+$(-1)^{|E(I)|}L_I R_I$, with
+\begin{equation}
+ L_I=\prod_{j=1}^R Z_j^{\sum_{r\in S}{\bf1}_{j\le r}\bmod2},
+ \qquad U_IL_IU_I^\dagger=(-1)^\kappa L_I .
+ \label{endpoint}
+\end{equation}
+The endpoint associator is therefore $(-1)^\kappa$ in the standard
+symmetry-localization construction~\cite{Else,LCW}. Thus $\kappa=1$
+realizes the nontrivial $H^3(\mathbb Z_2,U(1))$ class and has the sharp
+bound of Eq.~\eqref{graph}. This is a statement about these
+representatives, not arbitrary finite-depth conjugates. An abstract
+Eulerian graph alone carries no assumed spatial anomaly.
+
+\emph{$\mathbb Z_N$ boundary actions.---} Let $N\ge2$, $L\ge3$ and
+$1\le p<N$. On an oriented ring of $N$-level sites define
+\begin{equation}
+ U|x\rangle
+ =\exp\!\left[\frac{2\pi ip}{N^2}
+     \sum_j[x_{j+1}-x_j]_N\right]|x+\mathbf 1\rangle,
+ \label{Zn}
+\end{equation}
+where $x=(x_1,\ldots,x_L)$, $\mathbf 1=(1,\ldots,1)$, and
+$[\cdot]_N\in\{0,\ldots,N-1\}$. The sum is divisible by $N$ on
+the ring, so $U^N=\Id$. This is a standard type-I boundary
+action~\cite{Santos,Wang}; phase-branch conventions differ in the
+literature. The explicit polynomial branch of Ref.~\cite{Wang} is
+$U_{\rm pub}=J U^\dagger J^\dagger$, where the on-site unitary
+$J=\bigotimes_j(|x_j\rangle\mapsto|-x_j\rangle)$ maps the charge label
+$q$ to $-q$. Hence all entanglement statements below also hold for that
+branch.
+For an interval $I=[\ell,r]$ the internal-bond restriction obeys
+$U_I^N=Z_r^p Z_\ell^{-p}$ and
+$U_IZ_rU_I^\dagger=\omega^{-1}Z_r$, with $\omega=e^{2\pi i/N}$.
+The endpoint cocycle is $\omega^{\pm p a\lfloor(b+c)/N\rfloor}$;
+its class is nonzero for $p\not\equiv0\pmod N$~\cite{Else,Wang}.
+
+Every strongly symmetric state of Eq.~\eqref{Zn} on three nonempty
+connected arcs satisfies the explicit size-independent bound
+\begin{equation}
+ E_3(\rho)\ge\frac{\sin^4(\pi p/N)}{82944\,N^6}.
+ \label{ZnE3}
+\end{equation}
+It is conservative, not an optimal constant. To see it, measure in each
+arc the orbits of strings under uniform $\mathbb Z_N$ shifts; the local
+projectors commute with $U$ and leave three $N$-dimensional parties.
+For a product block vector $\psi$, set $z=\langle U\rangle_\psi$ and
+$\delta=\sqrt{2(1-|z|)}$. A basis measurement of each marginal shows
+that its probabilities and their cyclic shift differ in $\ell_1$ norm by
+at most $2\delta$. Thus each probability is at least $1/N-2\delta$.
+
+Relabel the two first arc shifts so their common bond has zero offset.
+The four phase factors $g_{ab}$ at $a,b\in\{0,1\}$ and fixed third
+shift satisfy $g_{00}g_{11}/(g_{10}g_{01})=e^{-2\pi ip/N}$: only the
+common bond survives this mixed difference. If
+$\delta<\sin(\pi p/N)/[3(2N)^{3/2}]$, all local probabilities exceed
+$1/(2N)$. The four normalized component equations for an approximate
+eigenvector differ from the corresponding $g_{ab}$ by at most
+$\eta=\delta(2N)^{3/2}<1$. Since a product vector gives a factorized
+ratio, $2\sin(\pi p/N)\le4\eta+2\eta^2\le6\eta$, a contradiction.
+Consequently all fully tripartite-separable states obey
+\begin{equation}
+ |\Tr(\rho U)|\le1-\frac{\sin^2(\pi p/N)}{144N^3}.
+ \label{ZnW}
+\end{equation}
+For arbitrary $\rho$, the product of pure-state marginals is separable;
+quantum Pinsker and convexity of the squared positive part give
+$E_3(\rho)\ge\frac14[|\Tr(\rho U)|-1+\sin^2(\pi p/N)/(144N^3)]_+^2$.
+In a charge sector $|\Tr(\rho U)|=1$, yielding Eq.~\eqref{ZnE3}.
+The orbit measurements are local with respect to the selected parties;
+they need not be spatially local within an arc.
+
+\emph{NPT sector projectors.---} For the same action let
+\begin{equation}
+ \rho_q=\frac1{N^L}\sum_{k=0}^{N-1}\omega^{-qk}U^k,
+ \qquad q=0,\ldots,N-1.
+ \label{sector}
+\end{equation}
+Its rank is $N^{L-1}$. Across any bipartition into two nonempty connected
+arcs, local uniform-shift orbits give $N\times N$ blocks. Choose an orbit
+pair with zero endpoint holonomy; its block action is locally equivalent
+to $X\otimes X$ times a diagonal phase $\gamma(d)$ depending on the
+relative shift $d$, where $\gamma(0)=1$ and $\gamma(d\ne0)=t:=\omega^p$.
+Local clock rotations change the charge, so take $q=0$. In the partial
+transpose, the subspace of fixed $a+b=1$ modulo $N$ is invariant. For
+$N\ge3$, its principal minor on indices $a=0,1,2$ is
+\begin{equation}
+ \frac1{N^2}\begin{pmatrix}
+ 1&1&t^2\\ 1&1&t\\ t^{-2}&t^{-1}&1
+ \end{pmatrix},\quad
+ \det=-\frac{4\sin^2(\pi p/N)}{N^6}<0.
+ \label{minor}
+\end{equation}
+This orbit block occurs for every connected cut. Thus every $\rho_q$ is
+NPT for $N\ge3$ and $p\ne0$, including noncoprime $p,N$.
+Moreover, the zero-holonomy blocks carry total weight $1/N$ for $L\ge3$.
+Writing $\mathcal N(\rho)=(\|\rho^{T_A}\|_1-1)/2$ and $d=t^2-t$,
+the minor's Rayleigh vector
+$(1,-1,-\bar d)$ gives the size-independent bound
+\begin{equation}
+ \mathcal N(\rho_q)\ge
+ \frac{4\sin^2(\pi p/N)}{N^3[2+4\sin^2(\pi p/N)]}>0.
+ \label{Nlower}
+\end{equation}
+
+An NPT sector projector cannot be a mixture of bipartite-product
+eigenvectors, so no complete orthonormal product eigenbasis exists. In
+fact even a nonorthogonal product eigenbasis is impossible: any product
+eigenvector in a zero-holonomy block must have full cyclic support and
+would force the relative-phase matrix $D_{ab}=1$ for $a=b$ and $t$
+otherwise to have rank one. Its rows $(0,1)$ and columns $(0,2)$ instead
+give the nonzero minor $t-t^2$. Local orbit projections commute with $U$
+and preserve product form, so all global product eigenvectors have zero
+projection onto these blocks and cannot span the full space.
+
+In fact, its best separable weight across this cut~\cite{Lewenstein} is
+exactly $1/N$. To see this, the $N$ equally weighted holonomy classes have,
+up to a scalar, $\gamma_h(d)=t^{{\bf1}_{d>h}}$ for $h=0,\ldots,N-1$.
+A product eigenvector requires $\gamma_h$ to be a character of $\mathbb Z_N$.
+For $h=0$, $\gamma_h(1)=\gamma_h(2)=t$ contradicts the character law;
+for $1\le h\le N-2$, $\gamma_h(1)=1$ but $\gamma_h(h+1)=t\ne1$.
+Only $h=N-1$ admits a product eigenbasis. Any separable component in a
+positive decomposition of $\rho_q$ is supported on its charge sector,
+and hence on these good blocks, which carry weight $1/N$. Their explicitly
+separable mixture attains that weight.
+
+This contradicts the broad finite-Abelian extension expected after
+Eq.~(23) of Ref.~\cite{LCW}. That expectation is not a theorem; no claim
+is made about other symmetry representatives or about every strong-sector
+state being bipartite entangled. Each proper subsystem of $\rho_q$ is
+exactly maximally mixed, because the partial trace of $U^k$ vanishes for
+$1\le k<N$.
+
+For $N=3$, $p=1,2$, the connected-cut orbit blocks have three equally
+frequent holonomies. Up to phases their relative-shift diagonals are
+$(1,t,t)$, $(1,1,t)$, and $(1,1,1)$, with $t=\omega^p$; the $p=2$
+phases are complex conjugates of $p=1$. The last gives a separable block.
+Each of the other two partial transposes splits into
+three identical-spectrum $3\times3$ blocks; after multiplication by $9$
+their diagonals and off-diagonal magnitudes are one, and their triangular
+phase products are $\omega^{\pm1}$. Their characteristic polynomial is
+$x^3-3x^2+3$. Thus
+\begin{equation}
+ \|\rho_q^{T_A}\|_1=\frac{5+8\cos(\pi/9)}9,
+ \qquad
+ \mathcal N(\rho_q)=\frac{4\cos(\pi/9)-2}{9}.
+ \label{Z3norm}
+\end{equation}
+The qutrit orbit blocks are equal mixtures of three Bell states. Their
+line-versus-triangle separability pattern and the relevant partial
+transpose analysis have close prior work~\cite{Baumgartner,Derkacz}.
+In particular the cubic above follows by specializing the general
+two-qutrit partial-transpose formula of Ref.~\cite{Baumgartner}; our
+calculation identifies these blocks and their weights in the many-site
+sector.
+
+\emph{Scope and status.---} The numerical bounds concern the displayed
+representatives and partitions, not arbitrary representatives of the same
+anomaly class. The graph calculation alone does not assume spatial
+locality; Eq.~\eqref{endpoint} uses the stated finite-range geometry.
+Ref.~\cite{LCW} already proves qualitative anomaly-imposed tripartite
+nonseparability and separately establishes a preparation obstruction. Our
+block measurements do not establish a new finite-depth result. Numerical
+and exact finite-size checks support, but do not replace, the analytic
+arguments. Specialist review and a complete priority assessment remain
+open. OpenAI Codex (including GPT-6.1 Terra subagents) assisted derivation,
+literature search, analytic and computational checks, and drafting under
+user direction; independent human verification and author identification
+are pending.
+
+\begin{thebibliography}{9}
+\bibitem{LCW} L.~A. Lessa, M.~Cheng, and C.~Wang, Mixed-state quantum
+anomaly and multipartite entanglement, Phys. Rev. X \textbf{15}, 011069
+(2025), \href{https://arxiv.org/abs/2401.17357}{arXiv:2401.17357}.
+\bibitem{Chen} X.~Chen, Z.-X.~Liu, and X.-G.~Wen, 2D symmetry protected
+topological orders and their protected gapless edge excitations, Phys.
+Rev. B \textbf{84}, 235141 (2011),
+\href{https://arxiv.org/abs/1106.4752}{arXiv:1106.4752}.
+\bibitem{Szalay} Sz.~Szalay, Multipartite entanglement measures,
+Phys. Rev. A \textbf{92}, 042329 (2015),
+\href{https://arxiv.org/abs/1503.06071}{arXiv:1503.06071}.
+\bibitem{Else} D.~V. Else and C.~Nayak, Classifying symmetry-protected
+topological phases through the anomalous action of the symmetry on the
+edge, Phys. Rev. B \textbf{90}, 235137 (2014),
+\href{https://arxiv.org/abs/1409.5436}{arXiv:1409.5436}.
+\bibitem{WehnerWinter} S.~Wehner and A.~Winter, Higher entropic
+uncertainty relations for anti-commuting observables, J. Math. Phys.
+\textbf{49}, 062105 (2008),
+\href{https://arxiv.org/abs/0710.1185}{arXiv:0710.1185}.
+\bibitem{Hein} M.~Hein, J.~Eisert, and H.~J. Briegel, Multiparty
+entanglement in graph states, Phys. Rev. A \textbf{69}, 062311 (2004),
+\href{https://arxiv.org/abs/quant-ph/0307130}{arXiv:quant-ph/0307130}.
+\bibitem{Santos} L.~H. Santos and J.~Wang, Symmetry-protected many-body
+Aharonov-Bohm effect, Phys. Rev. B \textbf{89}, 195122 (2014),
+\href{https://arxiv.org/abs/1310.8291}{arXiv:1310.8291}.
+\bibitem{Wang} J.~C. Wang, L.~H. Santos, and X.-G.~Wen, Bosonic anomalies,
+induced fractional quantum numbers and degenerate zero modes, Phys. Rev. B
+\textbf{91}, 195134 (2015),
+\href{https://arxiv.org/abs/1403.5256}{arXiv:1403.5256}.
+\bibitem{Baumgartner} B.~Baumgartner, B.~C. Hiesmayr, and H.~Narnhofer,
+The state space for two qutrits has a phase space structure in its core,
+Phys. Rev. A \textbf{74}, 032327 (2006),
+\href{https://arxiv.org/abs/quant-ph/0606083}{arXiv:quant-ph/0606083}.
+\bibitem{Derkacz} L.~Derkacz and L.~Jak\'obczyk, Entanglement of a class
+of mixed two-qutrit states, Phys. Rev. A \textbf{76}, 042304 (2007),
+\href{https://arxiv.org/abs/0707.1575}{arXiv:0707.1575}.
+\bibitem{Lewenstein} M.~Lewenstein and A.~Sanpera, Separability and
+entanglement of composite quantum systems, Phys. Rev. Lett. \textbf{80},
+2261 (1998), \href{https://arxiv.org/abs/quant-ph/9707043}{arXiv:quant-ph/9707043}.
+\end{thebibliography}
+\end{document}

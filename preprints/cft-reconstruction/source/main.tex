@@ -1,0 +1,240 @@
+\documentclass[aps,prl,reprint,10pt,longbibliography]{revtex4-2}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\setlength{\parskip}{0.1em}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+\begin{document}
+\title{Finite thermodynamic reconstruction of an integer-spectrum CFT}
+\begin{abstract}
+For a compact unitary two-dimensional CFT with $c_L=c_R=12k$, integer
+total dimensions and spins, and unmultiplied modular invariance, finitely
+many exact angular moments at finitely many temperatures determine the
+torus partition function. We prove explicit sampling bounds using
+separate $\Gamma(2)$ invariance. The angular order is optimal: for every
+$k$ we construct two genuine Narain CFTs with identical lower moments
+at every temperature but different moments at the stated order.
+The result determines the torus spectrum, not operator products; it
+assumes exact data and does not establish numerical stability.
+\end{abstract}
+\maketitle
+
+\noindent\textbf{Thermal data.}
+The torus trace encodes energy and angular momentum, but its zero-angle
+restriction sums over spin. Modular spectral reconstruction and
+discreteness have substantial literature \cite{ashrafi,kaidi,benjamin}.
+Integer-energy partition functions and their thermal chiralization were
+studied by Ashrafi and Loran \cite{ashrafi}. Dymarsky and Shapere
+exhibited Narain CFTs with identical thermal traces but distinct angular
+traces \cite{codes}; Kaidi and Perlmutter discussed earlier CFT pairs
+with the same light spectrum \cite{kaidi}. Benjamin \emph{et al.}
+studied reconstruction from light, scalar and spin-one spectra
+\cite{benjamin}, assuming a simple cuspidal eigenspectrum. We give a finite-sampling
+consequence of integer dimensions and full modular invariance.
+
+Fix the spatial circle to circumference $2\pi$ and write
+\begin{equation}
+\begin{aligned}
+ Z(z+it,-z+it)&=\Tr e^{-2\pi t(\Delta-k)+2\pi izJ},\\
+ M_r(t)&=\Tr[J^r e^{-2\pi t(\Delta-k)}].
+\end{aligned}
+ \label{eq:trace}
+\end{equation}
+Here $t=\beta/(2\pi)>0$ is the rescaled inverse temperature and the
+moments include descendants. Assume a
+compact unitary bosonic CFT with discrete finite-multiplicity spectrum,
+a unique vacuum, integer $\Delta=h+\bar h$ and $J=h-\bar h$,
+$c_L=c_R=12k$ for $k\in\Z_{>0}$, and simultaneous unmultiplied
+$S,T$ invariance. Neither parity invariance nor rationality is assumed.
+
+\noindent\textbf{Theorem.}
+Two theories satisfying these hypotheses for the same $k$ have identical
+torus partition functions if their $M_r$ agree for every $0\le r\le R_k$
+at either $k$ distinct inverse temperatures all in $(0,1]$, or all in
+$[1,\infty)$, or $2k-1$ arbitrary distinct positive inverse temperatures, where
+\begin{equation}
+ R_k=\begin{cases}3k,&k\text{ even},\\3k-1,&k\text{ odd}.\end{cases}
+ \label{eq:R}
+\end{equation}
+These data are exact; equality determines spin-resolved state
+multiplicities, not OPE coefficients.
+Alternatively choose $k$ distinct $t>1$, use all for $r=0$, and use
+any $k-\lceil r/3\rceil+1$ of them at each $r\ge1$.
+
+\noindent\textbf{Proof.}
+Continue the trace holomorphically to independent $\tau,\sigma$ in the
+upper half-plane, with physical slice $\sigma=-\bar\tau$. Normal
+convergence and holomorphic uniqueness on this maximally totally real
+slice continue simultaneous modular invariance. Since $2h,2\bar h\in\Z$, shifting either variable by $2$
+has no phase: $e^{4\pi i(h-k/2)}=1$. Conjugating independent $T^2$
+by simultaneous $S$ gives separate $\Gamma(2)$ invariance.
+
+For fixed $\sigma$, the left infinity cusp has pole order at most $k$
+in the width-two coordinate $u=e^{\pi i\tau}$. At the other cusps,
+simultaneous modular invariance moves that cusp to infinity and
+sends $\sigma$ to another fixed point of the upper half-plane; the
+same absolute trace bound applies. The right-variable statement follows
+identically. Since $X(2)$ is the $\lambda$-sphere with cusps
+$0,1,\infty$, each trace has
+\begin{equation}
+ Z(\tau,\sigma)=\frac{P(x,y)}{[x(1-x)y(1-y)]^k},
+ \quad x=\lambda(\tau),\ y=\lambda(\sigma),
+ \label{eq:form}
+\end{equation}
+with $\deg_xP,\deg_yP\le3k$. This genus-zero statement does not assume
+rationality; see also the level-two discussion in \cite{bae}. To obtain
+the two-variable form, evaluate at $3k+1$ independent first-variable
+points: the resulting coefficient functions inherit the right cusp
+bounds as finite linear combinations of traces.
+
+Let $P$ be the difference of the two numerators and put $n=3k$.
+The map $t\mapsto\lambda(it)$ is strictly monotone from $1$ to $0$, and
+\begin{equation}
+ \lambda'(\tau)=\pi i\lambda(\tau)(1-\lambda(\tau))
+ \vartheta_3(\tau)^4\ne0\quad(\tau=it).
+ \label{eq:lambda}
+\end{equation}
+Suppose inductively $P=(x-y)^rQ_r$. The $r$th angular derivative at
+$z=0$ is a nonzero factor times $q_r(x)=Q_r(x,x)$, with
+$\deg q_r\le2(n-r)$. Thus vanishing moments give zeros of $q_r$.
+Simultaneous modular transformations act on $x,y$ by the same $S_3$
+M\"obius transformation. The denominator in \eqref{eq:form} and
+$(x-y)^r$ acquire nonzero section factors, so a zero propagates through
+its orbit. A generic orbit has six finite points, exactly two in
+$(0,1)$, namely $x,1-x$; the exceptional orbit is $\{1/2,-1,2\}$.
+The samples meet at least $k$ orbits and give at least $6k-3$ distinct
+zeros, exceeding $2(n-r)$ for $r\ge2$.
+
+For $r=0,1$ use the common vacuum. Near the diagonal infinity cusp,
+the vacuum cancels and the remaining terms have total degree at least
+two in $(u,v)$, by integer $\Delta$ and unitarity. Thus $P$ has joint
+order at least two at every diagonal cusp, the other two following
+from modular covariance. As a section, $q_0$ has two additional zeros
+at each cusp and $q_1$ has one at each after division by $x-y$; a zero
+at infinity is a deficit from the maximum polynomial degree. Together
+with the orbit zeros, this forces $q_r=0$ for $r=0,1$ too. Thus
+$x-y$ divides $Q_r$ and the induction continues.
+
+For even $k$, data through $r=3k$ force $(x-y)^{3k+1}\mid P$,
+impossible by bidegree unless $P=0$. For odd $k$, data through
+$r=3k-1$ leave only $P=C(x-y)^{3k}$; simultaneous $S$ sends $x,y$ to
+$1-x,1-y$, fixing the denominator and reversing this odd polynomial,
+so $C=0$. For reduced sampling every strictly one-sided sample has a
+distinct six-point orbit; the cusp zeros suffice at $r=0$, and for
+$r\ge1$ the stated count $N_r$ obeys $6N_r>6k-2r$.
+
+\noindent\textbf{Low-energy corollary.}
+The complete spin-resolved state spectrum through
+$N=\lfloor3k/2\rfloor$ determines $Z$. Indeed, for a difference with
+this jet zero, the cleared numerator has order at least $2(N+1)$ at
+each diagonal cusp. After $r$ divisions by $x-y$, its diagonal
+restriction has degree $6k-2r$ and at least
+$3[2(N+1)-r]$ cusp zeros. Their number exceeds the degree for every
+$r\le3k$, forcing the difference to vanish. The physical pairs below
+first differ at $\Delta=N$, proving this cutoff sharp.
+
+\noindent\textbf{Physical seeds.}
+Let $U,V$ be the $D_{4,1}$ vacuum and vector characters; the spinor
+characters also equal $V$ at zero chemical potentials. Define
+\begin{equation}
+\begin{aligned}
+ A&=U(\tau)U(\sigma)+3V(\tau)V(\sigma),\\
+ W&=U(\tau)V(\sigma)-V(\tau)U(\sigma).
+\end{aligned}
+ \label{eq:AW}
+\end{equation}
+The $E_{8,1}$ character is $U^2+3V^2$. Hence the genuine
+$E_{8,1}\times D_{4,1}$ and $D_{4,1}^3$ theories have difference
+$3W^2A$. Their thermal equality follows from the $D_4^2$ versus $E_8$
+example in \cite{ashrafi}, after tensoring with $D_4$. They have equal
+$M_0,M_1$ but unequal $M_2$ at every
+finite $t$.
+
+For later composition use a neighboring pair instead: diagonal
+$D_{8,1}\times D_{4,1}$ and $D_{4,1}^3$. The $D_8$ diagonal
+characters give
+\begin{equation}
+ Z_{D_8\times D_4}-Z_{D_4^3}=W^2A.
+ \label{eq:k1}
+\end{equation}
+The $D_8$ root lattice is an index-two extension of $D_4^2$ by the
+vector--vector class. The corresponding maximal isotropic gluing codes
+therefore meet in codimension one. A concrete independent certificate
+is supplied with this source.
+
+For a $k=2$ neighboring pair, take the $D_4^6\oplus D_4(-1)^6$
+discriminant group $(\F_2^2)^{12}$. Consecutive bit pairs encode its
+twelve classes, the first six left-moving. Let $v_i$ be
+\begin{align*}
+ &(4280689,4003343,13490061,15943387,\\
+ &4783610,4517512,8704049,3143493,\\
+ &9304945,11135812,2974764,11955798),
+\end{align*}
+indexed from $i=0$. Set $a=v_1$, $a'=5138$, $f=30$, and let $S$ be
+spanned by $v_i+\operatorname{bit}_i(f)v_1$ for $i\ne1$. Then
+$S+\langle a\rangle$ and $S+\langle a'\rangle$ are neighboring
+maximal isotropic codes. The supplied standard-library certificate
+checks their $2^{11}$-element intersection, both $2^{12}$-element
+spans, the quadratic and bilinear forms, and the grouped weight
+enumerators. The latter give exactly
+\begin{equation}
+ Z_{S+\langle a\rangle}-Z_{S+\langle a'\rangle}=W^6.
+ \label{eq:k2}
+\end{equation}
+The initial lattice has determinant $4^{12}=2^{24}$; adjoining
+either code gives index $2^{12}$ and an even unimodular lattice of
+signature $(24,24)$. These define genuine compact unitary Narain
+CFTs \cite{narain,codes}. The vacuum is unique; isotropy gives
+integer spin and, since all three nonzero $D_4$ classes have norm
+$1\bmod2$, integer total dimension. At the first changed level
+$\Delta=3$, the sixth state-spin moments differ by
+$8^6 6!=188{,}743{,}680$.
+
+\noindent\textbf{Sharpness for every $k$.}
+We use the following elementary composition of neighboring isotropic
+codes. Write two pairs as $C=S+\langle a\rangle$,
+$C'=S+\langle a'\rangle$ and $D=T+\langle b\rangle$,
+$D'=T+\langle b'\rangle$, where the lifts are isotropic and the
+polarized pairings satisfy $(a,a')=(b,b')=1$ in $\F_2$.
+In the orthogonal direct sum define
+\begin{align}
+ E_+&=S\oplus T+\langle(a,b),(a',b')\rangle,\nonumber\\
+ E_-&=S\oplus T+\langle(a,b'),(a',b)\rangle .
+ \label{eq:bell}
+\end{align}
+The two added vectors are isotropic and mutually orthogonal because
+$1+1=0$. Both codes are maximal isotropic and they are neighbors:
+their common hyperplane is generated by $S\oplus T$ and
+$(a+a',b+b')$. Comparing their four cosets gives
+\begin{equation}
+ Z_{E_+}-Z_{E_-}=(Z_C-Z_{C'})(Z_D-Z_{D'}).
+ \label{eq:product}
+\end{equation}
+Iterating \eqref{eq:bell} with the two physical seeds produces even
+unimodular Narain pairs whose partition-function differences are
+$W^{3k}$ for even $k$ and $W^{3k-1}A$ for odd $k$. They have equal
+moments through $R_k-1$ for all $t$, while the $R_k$th differs. Indeed,
+the character identity $\lambda=2V/(U+V)$ and \eqref{eq:lambda} imply
+that $W$ has a simple angular zero: $U(it)>0$ and $\lambda'(it)\ne0$.
+Also $A(it,it)>0$.
+Thus \eqref{eq:R} is physically sharp for every $k$. These pairs first
+differ at $\Delta=\lfloor3k/2\rfloor$, so the low-energy corollary is
+sharp as well. The certificate also explicitly checks the first composed
+$k=3$ pair.
+
+\noindent\textbf{Scope.}
+The theorem concerns exact torus data and makes no numerical stability
+claim. Positive integral modular character data alone do not supply
+sewing or crossing; examples are known \cite{fakez}. Our sharpness
+pairs are actual lattice CFTs, not merely formal spectra. The $k=2$
+seed was found by a finite search and exactly certified. A complete
+literature and priority assessment remains open.
+
+\noindent\textbf{Research assistance.} OpenAI Codex and GPT-6.1 Terra
+assisted with derivations, literature search, exact computations and
+drafting. Human verification of the results remains pending.
+
+\bibliography{references}
+\end{document}

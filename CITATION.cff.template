@@ -1,0 +1,10 @@
+# INACTIVE TEMPLATE: do not rename to CITATION.cff until confirmed human
+# authorship metadata have been supplied and the resulting file is validated
+# against CFF 1.2.0. That format requires at least one author entry.
+cff-version: 1.2.0
+title: "CFT and Quantum Anomaly Research Preprints"
+message: "Please cite the relevant manuscript using confirmed authorship and release metadata."
+version: "0.1.0-draft.1"
+# authors:
+#   - family-names: "..."
+#     given-names: "..."
