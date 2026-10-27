@@ -3,6 +3,7 @@
 ## GitHub repository snapshot — 2026-10-27
 
 - Hosted the draft collection at [EastonSell/cft-anomaly](https://github.com/EastonSell/cft-anomaly) for review. The snapshot version does not assert a GitHub Release or tag.
+- Added the initial published snapshot ZIP and its checksum under `downloads/`.
 - Authorship, license, independent specialist review, and research priority remain open.
 
 ## v0.1.0-draft.1 — local release candidate, 2026-10-27

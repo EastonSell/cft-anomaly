@@ -11,6 +11,8 @@ This user-owned collection contains two short research drafts and supporting art
 
 The [catalogue](CONTENTS.md) records hypotheses and verification status for each item. The [ML feasibility note](research-notes/czx-ml-feasibility/README.md) is separate from the preprint catalogue: it corrects a proposed certificate menu and does not report a NeurIPS result.
 
+Download the [initial research-draft snapshot ZIP](downloads/ai-cft-anomaly-preprints-v0.1.0-draft.1.zip) and its [SHA-256 checksum](downloads/ai-cft-anomaly-preprints-v0.1.0-draft.1.zip.sha256). The archive contains the initial published snapshot and does not include the later archive-download files or links.
+
 ## What the evidence means
 
 The manuscript arguments are written analytic proofs, assessed by internal AI audits. Exact-arithmetic programs check specific algebraic identities and finite examples; floating-point numerical diagnostics are labeled as such. These checks do not by themselves establish all-parameter theorems. **No Lean formalization is currently provided.** See [formalization status](formalization/README.md) for bounded possible targets.

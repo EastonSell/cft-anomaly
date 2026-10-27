@@ -17,3 +17,5 @@ The two manuscripts are the frozen source and PDF versions listed below. They ar
 `SHA256SUMS.txt` inventories the complete release files except the checksum file itself. `scripts/verify_release.py` checks its entries and local Markdown links. Individual checks and their dependencies are described in `checks/`; finite checks are not substitutes for the all-parameter arguments. There are no Lean formalizations in this release.
 
 The repository is [EastonSell/cft-anomaly](https://github.com/EastonSell/cft-anomaly). No human author names, affiliations, DOI, or license are asserted. The GitHub description and topics in `REPOSITORY_METADATA.md` are proposed metadata only. Superseded material is segregated in `history/`. The version label identifies this snapshot; it does not itself assert a GitHub Release or tag.
+
+The ZIP in `downloads/` contains the initial published tree at commit `ccb3019c035d17ac9e8704788813ed2fff687aff`. It precedes the addition of that downloadable ZIP and its links. Its accompanying SHA-256 file checks the ZIP; the ZIP's own `SHA256SUMS.txt` checks the files inside it.
